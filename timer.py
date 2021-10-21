@@ -10,7 +10,6 @@ def timer(method):
         function = method()
         print("time: %f" % (time.time()-start))
         return function
-
     return get
 
 
