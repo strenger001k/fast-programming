@@ -11,6 +11,7 @@ async def process_file(filename):
                 text[i] = "*"
         await f.seek(0)
         await f.write(''.join(text))
+        print(filename)
 
 
 async def main():

@@ -10,6 +10,7 @@ def process_file(filename):
                 text[i] = "*"
         f.seek(0)
         f.write(''.join(text))
+        print(filename)
 
 
 def main():
