@@ -13,7 +13,7 @@ def process_file(filename):
         print(filename)
 
 
-def main():
+def main_multiprocessing():
     with Pool(5) as p:
         p.map(process_file, ([(f"{i}.txt") for i in range(1, 11)]))
         for j in range(11, 100, 10):
@@ -22,4 +22,4 @@ def main():
 
 def start():
     print("multiprocessing")
-    main()
+    main_multiprocessing()

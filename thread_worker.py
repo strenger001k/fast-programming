@@ -13,7 +13,7 @@ def process_file(filename):
         print(filename)
 
 
-def main():
+def main_thread():
     with ThreadPoolExecutor(max_workers=5) as th:
         th.map(process_file, ([(f"{i}.txt") for i in range(1, 11)]))
         for j in range(11, 100, 10):
@@ -22,4 +22,4 @@ def main():
 
 def start():
     print("threadpool")
-    main()
+    main_thread()

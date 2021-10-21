@@ -14,7 +14,7 @@ async def process_file(filename):
         print(filename)
 
 
-async def main():
+async def main_asyncio():
     await asyncio.gather(*[process_file(f"{i}.txt") for i in range(1, 11)])
     for j in range(11, 100, 10):
         await asyncio.gather(*[process_file(f"{i}.txt") for i in range(j, j+10)])
@@ -22,4 +22,4 @@ async def main():
 
 def start():
     print("asyncio")
-    asyncio.run(main())
+    asyncio.run(main_asyncio())
