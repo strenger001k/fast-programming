@@ -20,6 +20,6 @@ def main_thread():
             th.map(process_file, ([(f"{i}.txt") for i in range(j, j+10)]))
 
 
-def start():
+def start_thread():
     print("threadpool")
     main_thread()

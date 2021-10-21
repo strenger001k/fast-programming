@@ -1,6 +1,6 @@
 import time
 
-import asyncio_worker, multiprocessing, thread_worker
+import asyncio_worker, multiprocessing_worker, thread_worker
 import create_txt
 
 
@@ -17,17 +17,17 @@ def timer(method):
 
 @timer
 def function1():
-    asyncio_worker.start()
+    asyncio_worker.start_asyncio()
 
 
 @timer
 def function2():
-    multiprocessing.start()
+    multiprocessing_worker.start_multiprocessing()
 
 
 @timer
 def function3():
-    thread_worker.start()
+    thread_worker.start_thread()
 
 
 if __name__ == '__main__':

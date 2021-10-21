@@ -20,6 +20,6 @@ async def main_asyncio():
         await asyncio.gather(*[process_file(f"{i}.txt") for i in range(j, j+10)])
 
 
-def start():
+def start_asyncio():
     print("asyncio")
     asyncio.run(main_asyncio())

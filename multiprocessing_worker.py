@@ -20,6 +20,6 @@ def main_multiprocessing():
             p.map(process_file, ([(f"{i}.txt") for i in range(j, j+10)]))
 
 
-def start():
+def start_multiprocessing():
     print("multiprocessing")
     main_multiprocessing()
