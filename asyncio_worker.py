@@ -1,14 +1,12 @@
 import aiofiles
 import asyncio
+from process_file import replace_symbol
 
 
 async def process_file(filename):
     async with aiofiles.open(filename, 'r+') as f:
         content = await f.read()
-        text = list(content)
-        for i in range(len(text)):
-            if (i+1) % 5 == 0:
-                text[i] = "*"
+        text = replace_symbol(content)
         await f.seek(0)
         await f.write(''.join(text))
         print(filename)

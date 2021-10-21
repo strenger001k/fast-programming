@@ -1,13 +1,11 @@
 from concurrent.futures import ThreadPoolExecutor
+from process_file import replace_symbol
 
 
 def process_file(filename):
     with open(filename, 'r+') as f:
         content = f.read()
-        text = list(content)
-        for i in range(len(text)):
-            if (i+1) % 5 == 0:
-                text[i] = "*"
+        text = replace_symbol(content)
         f.seek(0)
         f.write(''.join(text))
         print(filename)
