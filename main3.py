@@ -6,7 +6,7 @@ def process_file(filename):
         content = f.read()
         text = list(content)
         for i in range(len(text)):
-            if (i+1)%5==0:
+            if (i+1) % 5 == 0:
                 text[i] = "*"
         f.seek(0)
         f.write(''.join(text))
