@@ -1,13 +1,14 @@
 import time
-
-import asyncio_worker, multiprocessing_worker, thread_worker
-import create_txt
+from asyncio_worker import start_asyncio
+from multiprocessing_worker import start_multiprocessing
+from thread_worker import start_thread
+from create_txt import reload
 
 
 def timer(method):
     def get():
         print("RESET")
-        create_txt.reload()
+        reload()
         start = time.time()
         function = method()
         print("time: %f" % (time.time()-start))
@@ -16,23 +17,23 @@ def timer(method):
 
 
 @timer
-def function1():
-    asyncio_worker.start_asyncio()
+def asyncio():
+    start_asyncio()
 
 
 @timer
-def function2():
-    multiprocessing_worker.start_multiprocessing()
+def multiprocessing():
+    start_multiprocessing()
 
 
 @timer
-def function3():
-    thread_worker.start_thread()
+def thread():
+    start_thread()
 
 
 if __name__ == '__main__':
-    function1()  # асинхронно
+    asyncio()  # асинхронно
 
-    function2()  # многопроцессорно
+    multiprocessing()  # многопроцессорно
 
-    function3()  # многопоточно
+    thread()  # многопоточно
