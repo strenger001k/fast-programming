@@ -32,8 +32,8 @@ def thread():
 
 
 if __name__ == '__main__':
-    asyncio()  # асинхронно
+    asyncio()
 
-    multiprocessing()  # многопроцессорно
+    multiprocessing()
 
-    thread()  # многопоточно
+    thread()
